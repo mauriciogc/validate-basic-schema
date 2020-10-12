@@ -1,5 +1,27 @@
 # View all rules [json-schema.org](https://json-schema.org/understanding-json-schema/reference/index.html)
 
+## Installation
+
+```bash
+yarn install
+```
+
+## Demo
+
+```bash
+yarn start
+```
+
+Runs the app in the development mode.
+Open http://localhost:8001/src to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+## Dependencies
+
+[@cfworker/json-schema](https://github.com/cfworker/cfworker/blob/master/packages/json-schema/README.md)
+
 ## JSON Schemas with @cfworker/json-schema
 
 Copy & paste in index.js to see demo
