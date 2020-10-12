@@ -1,0 +1,17 @@
+{
+	"name": "schema",
+	"version": "1.0.0",
+	"description": "Schema examples with @cfworker/json-schema",
+	"main": "index.js",
+	"author": "https://medium.com/@mauriciogc",
+	"scripts": {
+		"start": "es-dev-server --app-index src/index.html --node-resolve --open --watch"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"es-dev-server": "^1.57.8"
+	},
+	"dependencies": {
+		"@cfworker/json-schema": "^1.6.0"
+	}
+}
