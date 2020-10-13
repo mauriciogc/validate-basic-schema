@@ -36,7 +36,7 @@ Copy & paste in index.js to see demo
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "number",
+  type: "number",
 };
 
 const data = 100;
@@ -53,8 +53,8 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "number",
-	multipleOf: 10,
+  type: "number",
+  multipleOf: 10,
 };
 
 const data = 50;
@@ -71,8 +71,8 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "number",
-	minimum: 33,
+  type: "number",
+  minimum: 33,
 };
 
 const data = 34;
@@ -93,7 +93,7 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "string",
+  type: "string",
 };
 
 const data = "mauricio";
@@ -110,9 +110,9 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "string",
-	minLength: 2,
-	maxLength: 3,
+  type: "string",
+  minLength: 2,
+  maxLength: 3,
 };
 
 const data = "mau";
@@ -129,8 +129,8 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "string",
-	format: "date",
+  type: "string",
+  format: "date",
 };
 
 const data = "2020-31-01";
@@ -147,8 +147,8 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "string",
-	pattern: "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$",
+  type: "string",
+  pattern: "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$",
 };
 
 const data = "555-1234";
@@ -169,7 +169,7 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "boolean",
+  type: "boolean",
 };
 
 const data = false;
@@ -190,7 +190,7 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "boolean",
+  type: "boolean",
 };
 
 const data = false;
@@ -211,12 +211,12 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
+  type: "object",
 };
 
 const data = {
-	key: "value",
-	another_key: "value_2",
+  key: "value",
+  another_key: "value_2",
 };
 
 const validator = new Validator(schema);
@@ -231,29 +231,29 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string" },
-				city: { type: "string" },
-			},
-		},
-		age: { type: "integer" },
-	},
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string" },
+        city: { type: "string" },
+      },
+    },
+    age: { type: "integer" },
+  },
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		city: "CDMX",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    city: "CDMX",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -268,32 +268,32 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string" },
-				city: { type: "string" },
-			},
-			additionalProperties: true,
-		},
-		age: { type: "integer" },
-	},
-	additionalProperties: false,
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string" },
+        city: { type: "string" },
+      },
+      additionalProperties: true,
+    },
+    age: { type: "integer" },
+  },
+  additionalProperties: false,
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		city: "CDMX",
-		cp: "03100",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    city: "CDMX",
+    cp: "03100",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -308,33 +308,33 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string" },
-				city: { type: "string" },
-			},
-			additionalProperties: true,
-			required: ["country"],
-		},
-		age: { type: "integer" },
-	},
-	additionalProperties: false,
-	required: ["name", "lastName", "address", "age"],
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string" },
+        city: { type: "string" },
+      },
+      additionalProperties: true,
+      required: ["country"],
+    },
+    age: { type: "integer" },
+  },
+  additionalProperties: false,
+  required: ["name", "lastName", "address", "age"],
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		cp: "03100",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    cp: "03100",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -349,35 +349,35 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	minProperties: 2,
-	maxProperties: 4,
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string" },
-				city: { type: "string" },
-			},
-			additionalProperties: true,
-			required: ["country"],
-		},
-		age: { type: "integer" },
-	},
-	additionalProperties: true,
-	required: ["name", "lastName"],
+  type: "object",
+  minProperties: 2,
+  maxProperties: 4,
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string" },
+        city: { type: "string" },
+      },
+      additionalProperties: true,
+      required: ["country"],
+    },
+    age: { type: "integer" },
+  },
+  additionalProperties: true,
+  required: ["name", "lastName"],
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		cp: "03100",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    cp: "03100",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -392,39 +392,39 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	minProperties: 2,
-	maxProperties: 4,
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string" },
-				city: { type: "string" },
-			},
-			additionalProperties: true,
-			required: ["country"],
-		},
-		age: { type: "integer" },
-	},
-	additionalProperties: true,
-	required: ["name", "address"],
-	dependencies: {
-		name: ["lastName"],
-		lastName: ["name"],
-	},
+  type: "object",
+  minProperties: 2,
+  maxProperties: 4,
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string" },
+        city: { type: "string" },
+      },
+    additionalProperties: true,
+    required: ["country"],
+  },
+  age: { type: "integer" },
+  },
+  additionalProperties: true,
+  required: ["name", "address"],
+  dependencies: {
+    name: ["lastName"],
+    lastName: ["name"],
+  },
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		cp: "03100",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    cp: "03100",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -443,7 +443,7 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "array",
+  type: "array",
 };
 
 const data = ["Mauricio", 37, true, { address: { country: "México" } }];
@@ -460,10 +460,10 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "array",
-	items: {
-		type: "number",
-	},
+  type: "array",
+  items: {
+    type: "number",
+  },
 };
 
 const data = [1, 2, 3, 4];
@@ -480,10 +480,10 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "array",
-	contains: {
-		type: "number",
-	},
+  type: "array",
+  contains: {
+    type: "number",
+  },
 };
 
 const data = ["Mauricio", "García", 37];
@@ -500,27 +500,27 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "array",
-	items: [
-		{ type: "string" },
-		{ type: "string" },
-		{
-			type: "object",
-			properties: {
-				address: {
-					type: "object",
-					properties: {
-						country: {
-							type: "string",
-						},
-					},
-					required: ["country"],
-				},
-			},
-			required: ["address"],
-		},
-		{ type: "number" },
-	],
+  type: "array",
+  items: [
+    { type: "string" },
+    { type: "string" },
+    {
+      type: "object",
+      properties: {
+        address: {
+          type: "object",
+          properties: {
+            country: {
+              type: "string",
+            },
+          },
+          required: ["country"],
+        },
+      },
+      required: ["address"],
+    },
+    { type: "number" },
+  ],
 };
 
 const data = ["Mauricio", "García", { address: { country: "CDMX" } }, 37];
@@ -537,9 +537,9 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "array",
-	minItems: 2,
-	maxItems: 3,
+  type: "array",
+  minItems: 2,
+  maxItems: 3,
 };
 
 const data = ["Mauricio", "García"];
@@ -560,8 +560,8 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "number",
-	enum: [1, 2, 3, 4, 5],
+  type: "number",
+  enum: [1, 2, 3, 4, 5],
 };
 
 const data = 6;
@@ -582,33 +582,33 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	properties: {
-		name: { type: "string" },
-		lastName: { type: "string" },
-		address: {
-			type: "object",
-			properties: {
-				country: { type: "string", const: "México" },
-				city: { type: "string" },
-			},
-			additionalProperties: true,
-			required: ["country"],
-		},
-		age: { type: "integer" },
-	},
-	additionalProperties: true,
-	required: ["name", "address"],
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    lastName: { type: "string" },
+    address: {
+      type: "object",
+      properties: {
+        country: { type: "string", const: "México" },
+        city: { type: "string" },
+      },
+      additionalProperties: true,
+      required: ["country"],
+    },
+    age: { type: "integer" },
+  },
+  additionalProperties: true,
+  required: ["name", "address"],
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "México",
-		cp: "03100",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "México",
+    cp: "03100",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -627,7 +627,7 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	anyOf: [{ type: "string" }, { type: "number" }],
+  anyOf: [{ type: "string" }, { type: "number" }],
 };
 
 const data = 6;
@@ -644,10 +644,10 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	oneOf: [
-		{ type: "number", multipleOf: 5 },
-		{ type: "number", multipleOf: 3 },
-	],
+  oneOf: [
+    { type: "number", multipleOf: 5 },
+    { type: "number", multipleOf: 3 },
+  ],
 };
 
 const data = 6;
@@ -668,40 +668,40 @@ console.log("==>", result);
 import { Validator } from "@cfworker/json-schema";
 
 const schema = {
-	type: "object",
-	properties: {
-		name: "string",
-		age: "number",
-		address: {
-			type: "object",
-			properties: {
-				country: {
-					enum: ["México", "Canada"],
-				},
-			},
-			if: {
-				properties: { country: { const: "México" } },
-			},
-			then: {
-				properties: { postal_code: { pattern: "[0-9]{5}(-[0-9]{4})?" } },
-			},
-			else: {
-				properties: {
-					postal_code: { pattern: "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" },
-				},
-			},
-		},
-	},
+  type: "object",
+  properties: {
+    name: "string",
+    age: "number",
+    address: {
+      type: "object",
+      properties: {
+        country: {
+          enum: ["México", "Canada"],
+        },
+      },
+      if: {
+        properties: { country: { const: "México" } },
+      },
+      then: {
+        properties: { postal_code: { pattern: "[0-9]{5}(-[0-9]{4})?" } },
+      },
+      else: {
+        properties: {
+          postal_code: { pattern: "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" },
+        },
+      },
+    },
+  },
 };
 
 const data = {
-	name: "Mauricio",
-	lastName: "García",
-	address: {
-		country: "Canada",
-		postal_code: "K1M 1M4",
-	},
-	age: 37,
+  name: "Mauricio",
+  lastName: "García",
+  address: {
+    country: "Canada",
+    postal_code: "K1M 1M4",
+  },
+  age: 37,
 };
 
 const validator = new Validator(schema);
@@ -720,9 +720,9 @@ This example applies to everyone
 
 ```javascript
 const schema = {
-	$schema: "http://json-schema.org/draft-07/schema#",
-	title: "My schema title",
-	description: "A short description",
-	$comment: "This its a comment",
+  $schema: "http://json-schema.org/draft-07/schema#",
+  title: "My schema title",
+  description: "A short description",
+  $comment: "This its a comment",
 };
 ```
