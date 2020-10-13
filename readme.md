@@ -716,6 +716,8 @@ console.log("==>", result);
 
 ### $schema, title, description, $comment, examples
 
+This example applies to everyone
+
 ```javascript
 const schema = {
 	$schema: "http://json-schema.org/draft-07/schema#",
